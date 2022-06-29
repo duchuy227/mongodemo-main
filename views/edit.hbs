@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Edit product</title>
+</head>
+<body>
+    <h1 class="text text-center">Edit a product</h1>
+    <div class="container">
+    <form action="/editProduct" method="post">
+    <input type="hidden" name="_id" id="_id" value="{{product._id}}">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" name="txtName" value="{{product.name}}">
+    </div>
+    <div class="form-group">
+        <label for="discription">Discription:</label>
+        <input type="text" class="form-control" id="discription" name="txtDiscription" value="{{product.discription}}">
+    </div>
+    <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="text" class="form-control" id="price" name="txtPrice" value="{{product.price}}">
+    </div>
+    <div class="form-group">
+        <label for="picURL">Picture:</label>
+        <input type="text" class="form-control" id="picURL" name="txtPicture" value="{{product.picURL}}">
+        <img src="{{product.picURL}}" width="120" height="100" style="margin-top: 20px;"/>
+    </div>
+    <button type="submit" class="btn btn-success">Update</button>
+    <button type="cancel" class="btn btn-danger">Cancel</button>
+    
+    </form>
+    </div>
+</body>
+</html>

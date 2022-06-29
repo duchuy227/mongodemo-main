@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <title>View All Product</title>
+</head>
+<style>
+    h1 {
+        background: linear-gradient(to right, #f590ba 0%, #f26c99 100%);
+        text-align: center;
+        margin-left: 500px;
+        margin-right: 430px;
+        color: whitesmoke;
+        border-radius: 45px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 35px;
+        margin-top: 90px;
+        margin-bottom: 10px;
+    }
+    
+</style>
+<body style="background-color: #FFEFD5	;">
+
+    <nav class="navbar navbar-expand-lg" style="background-color:  #fa4993;">
+        <div class="container-fluid">
+            <a type="button" href="/" style="color: white; font-size: 25px; text-decoration:none; margin-left:200px"><i class="bi bi-arrow-left-square-fill">&nbsp;</i> HOME</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/create" style="color: white; font-size: 25px; margin-left: 100px;"><i class="bi bi-plus-square-fill"> &nbsp;</i> Add Product</a>
+                    </li>
+                    <li class="nav-item dropdown" style="margin-left: 50px;">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white; font-size: 25px;margin-left: 50px;">
+                        <i class="bi bi-arrow-down-up">&nbsp;</i> Sort</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color:#fa4993;">
+                            <form action="/ascending" method="post">
+                                <button class="btn btn-outline-danger" name="txtPrice" style="padding-right: 10px; padding-bottom:10px; color: black;"><i class="bi bi-arrow-up-square-fill">&nbsp;</i>Price Ascending</button>
+                            </form>
+                            <form action="/decrease" method="post">
+                                <button class="btn btn-outline-danger" name="txtPrice" style="padding-right: 20px; padding-top:10px; color: black;"><i class="bi bi-arrow-down-square-fill">&nbsp;</i>Price Decrease</button>
+                            </form>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex" action="/search" method="post" style="margin-right: 150px;">
+                    <input class="form-control me-2" type="search" placeholder="Product Name" aria-label="Search" name="txtName" required>
+                    <button class="btn btn-success" type="submit"><i class="fa-solid fa-magnifying-glass" style="font-size:22px"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <h1 class="display-5" style="font-weight: bold;">All Product</h1>
+
+    <hr style="color: #ed6fa4; padding-top: 5px">
+
+    <table class="table table-bordered" style="background-color: #f281d2;">
+        <thead>
+            <tr style="text-align: center; font-size: 22px">
+                <th>ID</th>
+                <th>Product Name</th>
+                <th>Discription</th>
+                <th>Price</th>
+                <th>Picture</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each products}}
+            <tr class="table" style="text-align: center; background-color:#FFE4E1">
+                <td style="padding-top: 100px; font-size:20px">{{@index}}</td>
+                <td style="padding-top: 100px; font-size:20px">{{name}}</td>
+                <td style="padding-top: 100px; font-size:20px">{{discription}}</td>
+                <td style="padding-top: 100px; font-size:20px">{{price}}$</td>
+                <td><img src="{{picURL}}" width="200" height="250" /></td>
+                <td style="padding-top: 100px">
+                    <a href="/edit?id={{_id}}" type="button" class="btn btn-danger btn-sm" style="font-size: 18px; padding: 10px; border-radius: 30px">
+                    <i class="fa-solid fa-pencil"></i></a>
+                </td>
+                <td style="padding-top: 100px">
+                    <a type="button" class="btn btn-success btn-sm" href="/delete?id={{_id}}" onclick="return confirm('Are you sure delete TOY : {{name}}')" style="font-size: 18px; padding:10px; color:whitesmoke; border-radius: 30px">
+                    <i class="fa-solid fa-trash-can"></i></a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</body>
+</html>

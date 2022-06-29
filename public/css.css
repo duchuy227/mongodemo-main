@@ -1,0 +1,18 @@
+.header{
+    background-color: #32e34f;
+    border: 2px solid #ffac30;
+    margin-top: 50px;
+	margin-bottom: 50px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.nav li:hover{
+    background-color: #D1D7D7;
+}
+.header1{
+	margin-top: 5px;
+}
+.search{
+	background-color: #DD8ACC;
+	color: white;
+}

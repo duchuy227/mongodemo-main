@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <title>New Product</title>
+</head>
+<style>
+    h1 {
+        background: linear-gradient(to right, #f590ba 0%, #f26c99 100%);
+        text-align: center;
+        margin-left: 259px;
+        margin-right: 230px;
+        color: whitesmoke;
+        border-radius: 45px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 35px;
+        padding-right: 100px;
+        padding-left: 100px;
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+    
+</style>
+<body style="background-color: #FFEFD5;">
+
+  <nav class="navbar navbar-expand-lg" style="background-color: #DCDCDC;">
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item">
+					 <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/287295497_1373353583146517_244306389109370417_n.png?_nc_cat=107&ccb=1-7&_nc_sid=aee45a&_nc_ohc=XOwdY9m54ycAX9m9asz&_nc_oc=AQk7Gh00kdCArhWlIqKklLI2GiTFC7MiH6Q2KjUELjvcN7oPPxCsRmk84c2GVi7Z_PkrgEwUpyZpyNgH7R8qj4aq&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVLfZen0-2s-UgI9Kq_lzX4J7z32kiDxUyB6AlPXetrfiA&oe=62DF03A0" width="180" height="180" style="margin-left: 50px;">
+				</li>
+				<li>
+					<h1 class="display-5" style="font-weight: bold">New Product</h1>
+				</li>
+        <li class="nav-item">
+					 <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/287295497_1373353583146517_244306389109370417_n.png?_nc_cat=107&ccb=1-7&_nc_sid=aee45a&_nc_ohc=XOwdY9m54ycAX9m9asz&_nc_oc=AQk7Gh00kdCArhWlIqKklLI2GiTFC7MiH6Q2KjUELjvcN7oPPxCsRmk84c2GVi7Z_PkrgEwUpyZpyNgH7R8qj4aq&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVLfZen0-2s-UgI9Kq_lzX4J7z32kiDxUyB6AlPXetrfiA&oe=62DF03A0" width="180" height="180" style="margin-left: 50px;">
+				</li>
+			</ul>
+		</div>
+	</nav>
+   
+   <br>
+    <div class="container">
+    <form action="/createProduct" method="post">
+
+    <div class="form-group" style="margin-top: 25px;">
+    <label for="name" style="color: #fa4993; font-weight:bold; font-size: 27px">Name:</label>
+    <input type="text" class="form-control" name="txtName" style="margin-top: 10px;">
+    <div style="font-size: 20px; color: #fa4993">{{nameError}}</div>
+    </div>
+
+    
+
+    <div class="form-group" style="margin-top: 15px;">
+    <label for="discription" style="color: #fa4993; font-weight:bold; font-size: 27px">Discription:</label>
+    <input type="text" class="form-control" name="txtDiscription" style="margin-top: 10px;">
+    <div style="font-size: 20px; color: #fa4993">{{DesError}}</div>
+    </div>
+
+    
+
+    <div class="form-group" style="margin-top: 15px;">
+    <label for="price" style="color: #fa4993; font-weight:bold; font-size: 27px">Price:</label>
+    <input type="number" class="form-control" name="txtPrice" style="margin-top: 10px;" required>
+    </div>
+
+    
+
+    <div class="form-group" style="margin-top: 15px;">
+    <label for="price" style="color: #fa4993; font-weight:bold; font-size: 27px">Picture:</label>
+    <input type="text" class="form-control" name="txtPicture" style="margin-top: 10px;" required>
+    </div>
+
+    <br>
+    <br>
+    
+    <button type="submit" class="btn btn-success" style="font-weight: bold; font-size:20px">Create Product</button>
+    <button type="cancel" class="btn btn-danger" style="margin-left: 20px; font-weight: bold; font-size: 20px;">Cancel</button>
+    
+    </form>
+    </div>
+</body>
+</html>
