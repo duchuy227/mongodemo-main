@@ -130,6 +130,6 @@ app.post('/decrease', async(req,res)=>{
     res.render('allProduct',{'products':products})
 })
 
-const POST = process.env.POST || 5000
-app.listen(POST)
+const PORT = process.env.PORT || 8000
+app.listen(PORT)
 console.log("Server is running!")
