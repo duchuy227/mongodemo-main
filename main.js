@@ -71,8 +71,9 @@ app.get('/viewAll',async(req,res)=>{
     //1. ket noi den database
     let client = await MongoClient.connect(url);
     let dbo = client.db("ATNToys");
-    let products = await dbo.collection("product").find().toArray()
+    let products = await dbo.collection("product").find().limit(5).toArray()
     res.render('allProduct',{'products':products})
+    
 })
 
 app.post('/createProduct', async (req,res)=>{
@@ -87,14 +88,14 @@ app.post('/createProduct', async (req,res)=>{
         'picURL':picURL
 
     }
-    if (name.length <= 4) {
-        res.render('create', { 'nameError': 'Name field must be more than 3 characters' })
-        return
-    }
-    if (discription.length <= 6) {
-        res.render('create', { 'DesError': 'Description field must be more than 5 characters' })
-        return
-    }
+    // if (name.length <= 4) {
+    //     res.render('create', { 'nameError': 'Name field must be more than 3 characters' })
+    //     return
+    // }
+    // if (discription.length <= 6) {
+    //     res.render('create', { 'DesError': 'Description field must be more than 5 characters' })
+    //     return
+    // }
     
     //insert product vao data
     //1.ket noi den database server voi dia
